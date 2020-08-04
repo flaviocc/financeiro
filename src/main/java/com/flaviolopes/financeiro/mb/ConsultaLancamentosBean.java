@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import com.flaviolopes.financeiro.model.Lancamento;
 import com.flaviolopes.financeiro.repository.Lancamentos;
@@ -24,7 +23,7 @@ public class ConsultaLancamentosBean implements Serializable {
 		EntityManager manager = JpaUtil.getEntityManager();
 
 		Lancamentos lancamentos = new Lancamentos(manager);
-		
+
 		this.lancamentos = lancamentos.todos();
 
 		manager.close();
